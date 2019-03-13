@@ -1,0 +1,9 @@
+INSERT INTO public.polfinal(
+	id_druzyny, zwyciestwa, remisy, porazki, zdobyte_gole, stracone_gole)
+	VALUES (25, 0, 0, 0, 0, 0),
+	(12, 0, 0, 0, 0, 0),
+	(20, 0, 0, 0, 0, 0),
+	(8, 0, 0, 0, 0, 0),
+	(1, 0, 0, 0, 0, 0),
+	(5, 0, 0, 0, 0, 0),
+	(18, 0, 0, 0, 0, 0);

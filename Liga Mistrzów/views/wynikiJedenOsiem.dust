@@ -1,0 +1,43 @@
+{>"JedenOsiemWyniki" /}
+
+{<kolejka1}
+	<table>
+		<tr>
+			<th>Drużyna A</th>
+			<th>Wynik</th>
+      <th>Drużyna B</th>
+      <th>Data Spotkania</th>
+		</tr>
+	{#wGrupa}
+		<tr>
+      {@lt key=spotkanie value=9}
+        <td>{nazwa1}</td>
+        <td>{wynik}</td>
+        <td>{nazwa2}</td>
+        <td>{data}</td>
+      {/lt}
+		</tr>
+	{/wGrupa}
+	</table>
+{/kolejka1}
+
+{<kolejka2}
+	<table>
+		<tr>
+			<th>Drużyna A</th>
+			<th>Wynik</th>
+      <th>Drużyna B</th>
+      <th>Data Spotkania</th>
+		</tr>
+	{#wGrupa}
+		<tr>
+      {@gt key=spotkanie value=8}
+        <td>{nazwa1}</td>
+        <td>{wynik}</td>
+        <td>{nazwa2}</td>
+        <td>{data}</td>
+      {/gt}
+		</tr>
+	{/wGrupa}
+	</table>
+{/kolejka2}

@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Liga Mistrzów</title>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" href="css/style.css" type="text/css"/>
+	<link rel="shortcut icon" href="img/shortcut.ico" type="image/x-icon"/>
+</head>
+<body onload="show();">
+
+	<header id="header">
+		<nav>
+			<ul>
+				<li><a href="index.html">POWRÓT</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<article>
+
+		<div id="formDiv">
+	  <table id="logTable">
+	  <thead><tr><td colspan="2" style="padding-top: 10px;">Logowanie</td></tr></thead>
+	      <tr><td width="40%" style="padding-top: 15px">Login:</td><td style="padding-top: 15px; padding-right: 20px"><input type='text' value='' name='login' id='login' /></td></tr>
+	      <tr><td style="padding-top: 15px;">Hasło:</td><td style="padding-top: 15px; padding-right: 20px"><input type='password' value='' name='password' id='password' /></td></tr>
+	      <tr><td colspan="2" style="padding-top: 15px; padding-bottom: 10px;"><input type='submit' name='submitLogin' onclick='log(this.form);' value='Zaloguj' /></td></tr>
+	  </table>
+	</div>
+	<div id="addNew" style="display: none;">
+	</div>
+	<div id="result">
+	</div>
+
+	</article>
+
+	<footer id="foot">
+		<p>&copy; Konrad Pasik</p>
+		<a href="admin.html">Panel Administratora</a>
+	</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

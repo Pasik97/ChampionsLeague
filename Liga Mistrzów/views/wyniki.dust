@@ -1,0 +1,20 @@
+{>"WynikiInne" /}
+
+{<body}
+	<table>
+		<tr>
+			<th>Drużyna A</th>
+			<th>Wynik</th>
+      <th>Drużyna B</th>
+      <th>Data Spotkania</th>
+		</tr>
+	{#wGrupa}
+		<tr>
+      <td>{nazwa1}</td>
+      <td>{wynik}</td>
+      <td>{nazwa2}</td>
+      <td>{data}</td>
+		</tr>
+	{/wGrupa}
+	</table>
+{/body}

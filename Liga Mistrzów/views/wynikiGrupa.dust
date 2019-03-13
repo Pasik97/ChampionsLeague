@@ -1,0 +1,135 @@
+{>"grupaWyniki" /}
+
+{<kolejka1}
+	<table>
+		<tr>
+			<th>Drużyna A</th>
+			<th>Wynik</th>
+      <th>Drużyna B</th>
+      <th>Data Spotkania</th>
+		</tr>
+	{#wGrupa}
+		<tr>
+      {@lt key=spotkanie value=17}
+        <td>{nazwa1}</td>
+        <td>{wynik}</td>
+        <td>{nazwa2}</td>
+        <td>{data}</td>
+      {/lt}
+		</tr>
+	{/wGrupa}
+	</table>
+{/kolejka1}
+
+{<kolejka2}
+	<table>
+		<tr>
+			<th>Drużyna A</th>
+			<th>Wynik</th>
+      <th>Drużyna B</th>
+      <th>Data Spotkania</th>
+		</tr>
+	{#wGrupa}
+		<tr>
+      {@gt key=spotkanie value=16}
+        {@lt key=spotkanie value=33}
+          <td>{nazwa1}</td>
+          <td>{wynik}</td>
+          <td>{nazwa2}</td>
+          <td>{data}</td>
+        {/lt}
+      {/gt}
+		</tr>
+	{/wGrupa}
+	</table>
+{/kolejka2}
+
+{<kolejka3}
+	<table>
+		<tr>
+			<th>Drużyna A</th>
+			<th>Wynik</th>
+      <th>Drużyna B</th>
+      <th>Data Spotkania</th>
+		</tr>
+	{#wGrupa}
+		<tr>
+      {@gt key=spotkanie value=32}
+        {@lt key=spotkanie value=49}
+          <td>{nazwa1}</td>
+          <td>{wynik}</td>
+          <td>{nazwa2}</td>
+          <td>{data}</td>
+        {/lt}
+      {/gt}
+		</tr>
+	{/wGrupa}
+	</table>
+{/kolejka3}
+
+{<kolejka4}
+	<table>
+		<tr>
+			<th>Drużyna A</th>
+			<th>Wynik</th>
+      <th>Drużyna B</th>
+      <th>Data Spotkania</th>
+		</tr>
+	{#wGrupa}
+		<tr>
+      {@gt key=spotkanie value=48}
+        {@lt key=spotkanie value=65}
+          <td>{nazwa1}</td>
+          <td>{wynik}</td>
+          <td>{nazwa2}</td>
+          <td>{data}</td>
+        {/lt}
+      {/gt}
+		</tr>
+	{/wGrupa}
+	</table>
+{/kolejka4}
+
+{<kolejka5}
+	<table>
+		<tr>
+			<th>Drużyna A</th>
+			<th>Wynik</th>
+      <th>Drużyna B</th>
+      <th>Data Spotkania</th>
+		</tr>
+	{#wGrupa}
+		<tr>
+      {@gt key=spotkanie value=64}
+        {@lt key=spotkanie value=81}
+          <td>{nazwa1}</td>
+          <td>{wynik}</td>
+          <td>{nazwa2}</td>
+          <td>{data}</td>
+        {/lt}
+      {/gt}
+		</tr>
+	{/wGrupa}
+	</table>
+{/kolejka5}
+
+{<kolejka6}
+	<table>
+		<tr>
+			<th>Drużyna A</th>
+			<th>Wynik</th>
+      <th>Drużyna B</th>
+      <th>Data Spotkania</th>
+		</tr>
+	{#wGrupa}
+		<tr>
+      {@gt key=spotkanie value=80}
+        <td>{nazwa1}</td>
+        <td>{wynik}</td>
+        <td>{nazwa2}</td>
+        <td>{data}</td>
+      {/gt}
+		</tr>
+	{/wGrupa}
+	</table>
+{/kolejka6}

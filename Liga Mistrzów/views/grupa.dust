@@ -1,0 +1,225 @@
+{>"grupaStat" /}
+
+{<grupaA}
+	<table>
+		<tr>
+			<th>Nazwa Drużyny</th>
+			<th>Zwyciestwa</th>
+      <th>Remisy</th>
+      <th>Porażki</th>
+      <th>Zdobyte gole</th>
+      <th>Stracone gole</th>
+      <th>Punkty</th>
+		</tr>
+	{#grupa}
+		<tr>
+    {@eq key=grupa value="A"}
+      <td>{nazwa}</td>
+      <td>{zwyciestwa}</td>
+      <td>{remisy}</td>
+      <td>{porazki}</td>
+      <td>{zdobyte_gole}</td>
+      <td>{stracone_gole}</td>
+      <td>{punkty}</td>
+    {/eq}
+
+		</tr>
+	{/grupa}
+	</table>
+{/grupaA}
+
+{<grupaB}
+	<table>
+		<tr>
+			<th>Nazwa Drużyny</th>
+			<th>Zwyciestwa</th>
+      <th>Remisy</th>
+      <th>Porażki</th>
+      <th>Zdobyte gole</th>
+      <th>Stracone gole</th>
+      <th>Punkty</th>
+		</tr>
+	{#grupa}
+		<tr>
+    {@eq key=grupa value="B"}
+      <td>{nazwa}</td>
+      <td>{zwyciestwa}</td>
+      <td>{remisy}</td>
+      <td>{porazki}</td>
+      <td>{zdobyte_gole}</td>
+      <td>{stracone_gole}</td>
+      <td>{punkty}</td>
+    {/eq}
+
+		</tr>
+	{/grupa}
+	</table>
+{/grupaB}
+
+{<grupaC}
+	<table>
+		<tr>
+			<th>Nazwa Drużyny</th>
+			<th>Zwyciestwa</th>
+      <th>Remisy</th>
+      <th>Porażki</th>
+      <th>Zdobyte gole</th>
+      <th>Stracone gole</th>
+      <th>Punkty</th>
+		</tr>
+	{#grupa}
+		<tr>
+    {@eq key=grupa value="C"}
+      <td>{nazwa}</td>
+      <td>{zwyciestwa}</td>
+      <td>{remisy}</td>
+      <td>{porazki}</td>
+      <td>{zdobyte_gole}</td>
+      <td>{stracone_gole}</td>
+      <td>{punkty}</td>
+    {/eq}
+
+		</tr>
+	{/grupa}
+	</table>
+{/grupaC}
+
+{<grupaD}
+	<table>
+		<tr>
+			<th>Nazwa Drużyny</th>
+			<th>Zwyciestwa</th>
+      <th>Remisy</th>
+      <th>Porażki</th>
+      <th>Zdobyte gole</th>
+      <th>Stracone gole</th>
+      <th>Punkty</th>
+		</tr>
+	{#grupa}
+		<tr>
+    {@eq key=grupa value="D"}
+      <td>{nazwa}</td>
+      <td>{zwyciestwa}</td>
+      <td>{remisy}</td>
+      <td>{porazki}</td>
+      <td>{zdobyte_gole}</td>
+      <td>{stracone_gole}</td>
+      <td>{punkty}</td>
+    {/eq}
+
+		</tr>
+	{/grupa}
+	</table>
+{/grupaD}
+
+{<grupaE}
+	<table>
+		<tr>
+			<th>Nazwa Drużyny</th>
+			<th>Zwyciestwa</th>
+      <th>Remisy</th>
+      <th>Porażki</th>
+      <th>Zdobyte gole</th>
+      <th>Stracone gole</th>
+      <th>Punkty</th>
+		</tr>
+	{#grupa}
+		<tr>
+    {@eq key=grupa value="E"}
+      <td>{nazwa}</td>
+      <td>{zwyciestwa}</td>
+      <td>{remisy}</td>
+      <td>{porazki}</td>
+      <td>{zdobyte_gole}</td>
+      <td>{stracone_gole}</td>
+      <td>{punkty}</td>
+    {/eq}
+
+		</tr>
+	{/grupa}
+	</table>
+{/grupaE}
+
+{<grupaF}
+	<table>
+		<tr>
+			<th>Nazwa Drużyny</th>
+			<th>Zwyciestwa</th>
+      <th>Remisy</th>
+      <th>Porażki</th>
+      <th>Zdobyte gole</th>
+      <th>Stracone gole</th>
+      <th>Punkty</th>
+		</tr>
+	{#grupa}
+		<tr>
+    {@eq key=grupa value="F"}
+      <td>{nazwa}</td>
+      <td>{zwyciestwa}</td>
+      <td>{remisy}</td>
+      <td>{porazki}</td>
+      <td>{zdobyte_gole}</td>
+      <td>{stracone_gole}</td>
+      <td>{punkty}</td>
+    {/eq}
+
+		</tr>
+	{/grupa}
+	</table>
+{/grupaF}
+
+{<grupaG}
+	<table>
+		<tr>
+			<th>Nazwa Drużyny</th>
+			<th>Zwyciestwa</th>
+      <th>Remisy</th>
+      <th>Porażki</th>
+      <th>Zdobyte gole</th>
+      <th>Stracone gole</th>
+      <th>Punkty</th>
+		</tr>
+	{#grupa}
+		<tr>
+    {@eq key=grupa value="G"}
+      <td>{nazwa}</td>
+      <td>{zwyciestwa}</td>
+      <td>{remisy}</td>
+      <td>{porazki}</td>
+      <td>{zdobyte_gole}</td>
+      <td>{stracone_gole}</td>
+      <td>{punkty}</td>
+    {/eq}
+
+		</tr>
+	{/grupa}
+	</table>
+{/grupaG}
+
+{<grupaH}
+	<table>
+		<tr>
+			<th>Nazwa Drużyny</th>
+			<th>Zwyciestwa</th>
+      <th>Remisy</th>
+      <th>Porażki</th>
+      <th>Zdobyte gole</th>
+      <th>Stracone gole</th>
+      <th>Punkty</th>
+		</tr>
+	{#grupa}
+		<tr>
+    {@eq key=grupa value="H"}
+      <td>{nazwa}</td>
+      <td>{zwyciestwa}</td>
+      <td>{remisy}</td>
+      <td>{porazki}</td>
+      <td>{zdobyte_gole}</td>
+      <td>{stracone_gole}</td>
+      <td>{punkty}</td>
+    {/eq}
+
+		</tr>
+	{/grupa}
+	</table>
+{/grupaH}

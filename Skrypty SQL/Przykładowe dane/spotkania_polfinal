@@ -1,0 +1,6 @@
+INSERT INTO public."spotkania_polfinal"(
+	id_spotkania, id_druzyny1, id_druzyny2, data_spotkania, wynik)
+	VALUES (1, 25, 12, '12-02-19', '-'),
+	(2, 20, 8, '12-02-19', '-'),
+	(3, 12, 1, '12-02-19', '-'),
+	(4, 18, 5, '12-02-19', '-');

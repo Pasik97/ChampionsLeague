@@ -1,0 +1,8 @@
+INSERT INTO public.cwiercfinal(
+	id_druzyny, zwyciestwa, remisy, porazki, zdobyte_gole, stracone_gole)
+	VALUES (26, 0, 0, 0, 0, 0),
+	(13, 0, 0, 0, 0, 0),
+	(30, 0, 0, 0, 0, 0),
+	(9, 0, 0, 0, 0, 0),
+	(6, 0, 0, 0, 0, 0),
+	(1, 0, 0, 0, 0, 0);

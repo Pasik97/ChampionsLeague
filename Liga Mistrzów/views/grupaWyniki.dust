@@ -1,0 +1,75 @@
+<html>
+<head>
+	<title>Liga Mistrzów</title>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" href="css/styleLayout.css" type="text/css"/>
+	<link rel="shortcut icon" href="img/shortcut.ico" type="image/x-icon"/>
+</head>
+<body onload="showTeams();">
+
+	<header id="header">
+		<nav>
+			<ul>
+				<li><a href="/druzyny">DRUŻYNY</a></li>
+				<li onclick="showStat();"><a>STATYSTYKI DRUŻYN</a></li>
+				<li onclick="showDraws();"><a>SPOTKANIA</a></li>
+			</ul>
+			<ul id="stat1">
+			</ul>
+			<ul id="stat">
+				<li><a href="/statGrupa">Grupa</a></li>
+				<li><a href="/stat18">1/8 Finału</a></li>
+				<li><a href="/statCw">Ćwierćfinał</a></li>
+				<li><a href="/statPF">Półfinał</a></li>
+				<li><a href="/statF">Finał</a></li>
+			</ul>
+			<ul id="draws">
+				<li><a href="/wynikiGrupa">Grupa</a></li>
+				<li><a href="/wyniki18">1/8 Finału</a></li>
+				<li><a href="/wynikiCw">Ćwierćfinał</a></li>
+				<li><a href="/wynikiPF">Półfinał</a></li>
+				<li><a href="/wynikiF">Finał</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<article>
+		<div id="teams" style="width: 1000px;">
+			<h1>Kolejka:</h1>
+			<ul>
+				<li onclick="show1()">1</li>
+				<li onclick="show2()">2</li>
+				<li onclick="show3()">3</li>
+				<li onclick="show4()">4</li>
+				<li onclick="show5()">5</li>
+				<li onclick="show6()">6</li>
+			</ul>
+			<div id="kolejka1" style="display: block">
+				{+kolejka1 /}
+			</div>
+			<div id="kolejka2">
+				{+kolejka2 /}
+			</div>
+			<div id="kolejka3">
+				{+kolejka3 /}
+			</div>
+			<div id="kolejka4">
+				{+kolejka4 /}
+			</div>
+			<div id="kolejka5">
+				{+kolejka5 /}
+			</div>
+			<div id="kolejka6">
+				{+kolejka6 /}
+			</div>
+		</div>
+	</article>
+
+	<footer id="foot">
+		<p>&copy; Konrad Pasik</p>
+		<a href="admin.html">Panel Administratora</a>
+	</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

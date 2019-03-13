@@ -1,0 +1,144 @@
+--Tworzenie Funkcji
+
+CREATE OR REPLACE FUNCTION public.druzyny(
+	)
+    RETURNS TABLE(nazwa character, kraj_pochodzenia character, liga character) 
+    LANGUAGE 'sql'
+
+    COST 100
+    VOLATILE 
+    ROWS 1000
+AS $BODY$
+    SELECT d.nazwa, d.kraj_pochodzenia, d.liga
+         FROM druzyny d order by d.id_druzyny;
+$BODY$;
+
+CREATE OR REPLACE FUNCTION public.grupastat(
+	)
+    RETURNS TABLE(grupa "char", nazwa character, zwyciestwa integer, remisy integer, porazki integer, zdobyte_gole integer, stracone_gole integer, punkty integer) 
+    LANGUAGE 'sql'
+
+    COST 100
+    VOLATILE 
+    ROWS 1000
+AS $BODY$
+    SELECT g.grupa, d.nazwa, g.zwyciestwa, g.remisy, g.porazki, g.zdobyte_gole, g.stracone_gole, g.punkty from grupa g, druzyny d 
+	where g.id_druzyny=d.id_druzyny order by g.grupa, g.punkty DESC;
+$BODY$;
+
+CREATE OR REPLACE FUNCTION public.jedenosiemstat(
+	)
+    RETURNS TABLE(nazwa character, zwyciestwa integer, remisy integer, porazki integer, zdobyte_gole integer, stracone_gole integer) 
+    LANGUAGE 'sql'
+
+    COST 100
+    VOLATILE 
+    ROWS 1000
+AS $BODY$
+    SELECT d.nazwa, j.zwyciestwa, j.remisy, j.porazki, j.zdobyte_gole, j.stracone_gole from jedna_osma_finalu j, druzyny d 
+	where j.id_druzyny=d.id_druzyny;
+$BODY$;
+
+CREATE OR REPLACE FUNCTION public.cwiercfinal(
+	)
+    RETURNS TABLE(nazwa character, zwyciestwa integer, remisy integer, porazki integer, zdobyte_gole integer, stracone_gole integer) 
+    LANGUAGE 'sql'
+
+    COST 100
+    VOLATILE 
+    ROWS 1000
+AS $BODY$
+    SELECT d.nazwa, c.zwyciestwa, c.remisy, c.porazki, c.zdobyte_gole, c.stracone_gole from cwiercfinal c, druzyny d 
+	where c.id_druzyny=d.id_druzyny;
+$BODY$;
+
+CREATE OR REPLACE FUNCTION public.polfinal(
+	)
+    RETURNS TABLE(nazwa character, zwyciestwa integer, remisy integer, porazki integer, zdobyte_gole integer, stracone_gole integer) 
+    LANGUAGE 'sql'
+
+    COST 100
+    VOLATILE 
+    ROWS 1000
+AS $BODY$
+    SELECT d.nazwa, p.zwyciestwa, p.remisy, p.porazki, p.zdobyte_gole, p.stracone_gole from polfinal p, druzyny d 
+	where p.id_druzyny=d.id_druzyny;
+$BODY$;
+
+CREATE OR REPLACE FUNCTION public.final(
+	)
+    RETURNS TABLE(nazwa character, zwyciestwa integer, porazki integer, zdobyte_gole integer, stracone_gole integer) 
+    LANGUAGE 'sql'
+
+    COST 100
+    VOLATILE 
+    ROWS 1000
+AS $BODY$
+    SELECT d.nazwa, f.zwyciestwa,  f.porazki, f.zdobyte_gole, f.stracone_gole from final f, druzyny d 
+	where f.id_druzyny=d.id_druzyny;
+$BODY$;
+
+CREATE OR REPLACE FUNCTION public.spotkaniagrupa(
+	)
+    RETURNS TABLE(spotkanie integer, nazwa1 character, wynik character, nazwa2 character, data character, grupa character) 
+    LANGUAGE 'sql'
+
+    COST 100
+    VOLATILE 
+    ROWS 1000
+AS $BODY$
+    select g.id_spotkania, d1.nazwa, g.wynik, d2.nazwa, g.data_spotkania, g.grupa from druzyny d1, druzyny d2, spotkania_grupa g 
+	where g.id_druzyny1=d1.id_druzyny and g.id_druzyny2=d2.id_druzyny order by g.data_spotkania, g.grupa;
+$BODY$;
+
+CREATE OR REPLACE FUNCTION public.spotkaniajedenosiem(
+	)
+    RETURNS TABLE(spotkanie integer, nazwa1 character, wynik character, nazwa2 character, data character) 
+    LANGUAGE 'sql'
+
+    COST 100
+    VOLATILE 
+    ROWS 1000
+AS $BODY$
+    select g.id_spotkania, d1.nazwa, g.wynik, d2.nazwa, g.data_spotkania from druzyny d1, druzyny d2, "spotkania_1/8" g 
+	where g.id_druzyny1=d1.id_druzyny and g.id_druzyny2=d2.id_druzyny order by g.data_spotkania;
+$BODY$;
+
+CREATE OR REPLACE FUNCTION public.spotkaniacwiercfinal(
+	)
+    RETURNS TABLE(spotkanie integer, nazwa1 character, wynik character, nazwa2 character, data character) 
+    LANGUAGE 'sql'
+
+    COST 100
+    VOLATILE 
+    ROWS 1000
+AS $BODY$
+    select g.id_spotkania, d1.nazwa, g.wynik, d2.nazwa, g.data_spotkania from druzyny d1, druzyny d2, "spotkania_cwiercfinal" g 
+	where g.id_druzyny1=d1.id_druzyny and g.id_druzyny2=d2.id_druzyny order by g.data_spotkania;
+$BODY$;
+
+CREATE OR REPLACE FUNCTION public.spotkaniapolfinal(
+	)
+    RETURNS TABLE(spotkanie integer, nazwa1 character, wynik character, nazwa2 character, data character) 
+    LANGUAGE 'sql'
+
+    COST 100
+    VOLATILE 
+    ROWS 1000
+AS $BODY$
+    select g.id_spotkania, d1.nazwa, g.wynik, d2.nazwa, g.data_spotkania from druzyny d1, druzyny d2, "spotkania_polfinal" g 
+	where g.id_druzyny1=d1.id_druzyny and g.id_druzyny2=d2.id_druzyny order by g.data_spotkania;
+$BODY$;
+
+CREATE OR REPLACE FUNCTION public.spotkaniafinal(
+	)
+    RETURNS TABLE(spotkanie integer, nazwa1 character, wynik character, nazwa2 character, data character) 
+    LANGUAGE 'sql'
+
+    COST 100
+    VOLATILE 
+    ROWS 1000
+AS $BODY$
+    select g.id_spotkania, d1.nazwa, g.wynik, d2.nazwa, g.data_spotkania from druzyny d1, druzyny d2, "spotaknia_final" g 
+	where g.id_druzyny1=d1.id_druzyny and g.id_druzyny2=d2.id_druzyny order by g.data_spotkania;
+$BODY$;

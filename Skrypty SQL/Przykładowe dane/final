@@ -1,0 +1,4 @@
+INSERT INTO public.final(
+	id_druzyny, zwyciestwa, porazki, zdobyte_gole, stracone_gole)
+	VALUES (2, 0, 0, 0, 0),
+	(1, 0, 0, 0, 0);

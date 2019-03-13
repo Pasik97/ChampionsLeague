@@ -1,0 +1,23 @@
+{>"inneStat" /}
+
+{<body}
+	<table>
+		<tr>
+			<th>Nazwa Drużyny</th>
+			<th>Zwyciestwa</th>
+      <th>Porażki</th>
+      <th>Zdobyte gole</th>
+      <th>Stracone gole</th>
+		</tr>
+	{#final}
+		<tr>
+      <td>{nazwa}</td>
+      <td>{zwyciestwa}</td>
+      <td>{porazki}</td>
+      <td>{zdobyte_gole}</td>
+      <td>{stracone_gole}</td>
+
+		</tr>
+	{/final}
+	</table>
+{/body}

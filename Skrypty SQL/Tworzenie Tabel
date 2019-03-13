@@ -1,0 +1,230 @@
+--Tworzenie Tabel
+
+CREATE TABLE public.druzyny
+(
+    id_druzyny integer NOT NULL,
+    nazwa character(50) COLLATE pg_catalog."default",
+    kraj_pochodzenia character(50) COLLATE pg_catalog."default",
+    liga character(50) COLLATE pg_catalog."default",
+    CONSTRAINT druzyny_pkey PRIMARY KEY (id_druzyny)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+CREATE TABLE public.grupa
+(
+    id_druzyny integer NOT NULL,
+    zwyciestwa integer,
+    remisy integer,
+    porazki integer,
+    zdobyte_gole integer,
+    stracone_gole integer,
+    grupa "char",
+    punkty integer,
+    CONSTRAINT grupa_pkey PRIMARY KEY (id_druzyny),
+    CONSTRAINT grupa_id_druzyny_fkey FOREIGN KEY (id_druzyny)
+        REFERENCES public.druzyny (id_druzyny) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+CREATE TABLE public.jedna_osma_finalu
+(
+    id_druzyny integer NOT NULL,
+    zwyciestwa integer,
+    remisy integer,
+    porazki integer,
+    zdobyte_gole integer,
+    stracone_gole integer,
+    CONSTRAINT jedna_osma_finalu_pkey PRIMARY KEY (id_druzyny),
+    CONSTRAINT jedna_osma_finalu_id_druzyny_fkey FOREIGN KEY (id_druzyny)
+        REFERENCES public.druzyny (id_druzyny) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+CREATE TABLE public.cwiercfinal
+(
+    id_druzyny integer NOT NULL,
+    zwyciestwa integer,
+    remisy integer,
+    porazki integer,
+    zdobyte_gole integer,
+    stracone_gole integer,
+    CONSTRAINT cwiercfinal_pkey PRIMARY KEY (id_druzyny),
+    CONSTRAINT cwiercfinal_id_druzyny_fkey FOREIGN KEY (id_druzyny)
+        REFERENCES public.druzyny (id_druzyny) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+CREATE TABLE public.polfinal
+(
+    id_druzyny integer NOT NULL,
+    zwyciestwa integer,
+    remisy integer,
+    porazki integer,
+    zdobyte_gole integer,
+    stracone_gole integer,
+    CONSTRAINT polfinal_pkey PRIMARY KEY (id_druzyny),
+    CONSTRAINT polfinal_id_druzyny_fkey FOREIGN KEY (id_druzyny)
+        REFERENCES public.druzyny (id_druzyny) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+CREATE TABLE public.final
+(
+    id_druzyny integer NOT NULL,
+    zwyciestwa integer,
+    porazki integer,
+    zdobyte_gole integer,
+    stracone_gole integer,
+    remisy integer,
+    CONSTRAINT final_pkey PRIMARY KEY (id_druzyny),
+    CONSTRAINT final_id_druzyny_fkey FOREIGN KEY (id_druzyny)
+        REFERENCES public.druzyny (id_druzyny) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+CREATE TABLE public.spotkania_grupa
+(
+    id_spotkania integer NOT NULL,
+    id_druzyny1 integer,
+    id_druzyny2 integer,
+    data_spotkania character(10) COLLATE pg_catalog."default",
+    grupa character(1) COLLATE pg_catalog."default",
+    wynik character(10) COLLATE pg_catalog."default",
+    CONSTRAINT spotkania_grupa_pkey PRIMARY KEY (id_spotkania),
+    CONSTRAINT spotkania_grupa_id_druzyny1_fkey FOREIGN KEY (id_druzyny1)
+        REFERENCES public.grupa (id_druzyny) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT spotkania_grupa_id_druzyny2_fkey FOREIGN KEY (id_druzyny2)
+        REFERENCES public.grupa (id_druzyny) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+CREATE TABLE public."spotkania_1/8"
+(
+    id_druzyny1 integer,
+    id_druzyny2 integer,
+    wynik character(10) COLLATE pg_catalog."default",
+    id_spotkania integer,
+    data_spotkania character(10) COLLATE pg_catalog."default",
+    CONSTRAINT "spotkania_1/8_id_druzyny1_fkey" FOREIGN KEY (id_druzyny1)
+        REFERENCES public.jedna_osma_finalu (id_druzyny) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "spotkania_1/8_id_druzyny2_fkey" FOREIGN KEY (id_druzyny2)
+        REFERENCES public.jedna_osma_finalu (id_druzyny) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+CREATE TABLE public.spotkania_cwiercfinal
+(
+    id_druzyny1 integer,
+    id_druzyny2 integer,
+    wynik character(10) COLLATE pg_catalog."default",
+    data_spotkania character(10) COLLATE pg_catalog."default",
+    id_spotkania integer,
+    CONSTRAINT spotkania_cwiercfinal_id_druzyny1_fkey FOREIGN KEY (id_druzyny1)
+        REFERENCES public.cwiercfinal (id_druzyny) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT spotkania_cwiercfinal_id_druzyny2_fkey FOREIGN KEY (id_druzyny2)
+        REFERENCES public.cwiercfinal (id_druzyny) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+CREATE TABLE public.spotkania_polfinal
+(
+    id_druzyny1 integer,
+    id_druzyny2 integer,
+    wynik character(10) COLLATE pg_catalog."default",
+    id_spotkania integer,
+    data_spotkania character(10) COLLATE pg_catalog."default",
+    CONSTRAINT spotkania_polfinal_id_druzyny1_fkey FOREIGN KEY (id_druzyny1)
+        REFERENCES public.polfinal (id_druzyny) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT spotkania_polfinal_id_druzyny2_fkey FOREIGN KEY (id_druzyny2)
+        REFERENCES public.polfinal (id_druzyny) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+CREATE TABLE public.spotaknia_final
+(
+    id_druzyny1 integer,
+    id_druzyny2 integer,
+    wynik character(10) COLLATE pg_catalog."default",
+    data_spotkania character(10) COLLATE pg_catalog."default",
+    id_spotkania integer,
+    CONSTRAINT spotaknia_final_id_druzyny1_fkey FOREIGN KEY (id_druzyny1)
+        REFERENCES public.final (id_druzyny) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT spotaknia_final_id_druzyny2_fkey FOREIGN KEY (id_druzyny2)
+        REFERENCES public.final (id_druzyny) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+CREATE TABLE public.admin
+(
+    id_admina integer NOT NULL,
+    login character(20) COLLATE pg_catalog."default",
+    password character(20) COLLATE pg_catalog."default",
+    CONSTRAINT admin_pkey PRIMARY KEY (id_admina)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;

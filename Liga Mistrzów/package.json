@@ -1,0 +1,17 @@
+{
+  "name": "Championship",
+  "version": "1.0.0",
+  "description": "Championship Manager",
+  "main": "app.js",
+  "author": "Konrad Pasik",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "*",
+    "consolidate": "*",
+    "dust": "*",
+    "dustjs-helpers": "*",
+    "dustjs-linkedin": "*",
+    "express": "*",
+    "pg": "*"
+  }
+}

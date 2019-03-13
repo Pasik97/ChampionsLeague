@@ -1,0 +1,18 @@
+{>"layout" /}
+
+{<body}
+	<table>
+		<tr>
+			<th>Nazwa Drużyny</th>
+			<th>Kraj pochodzenia</th>
+			<th>Liga</th>
+		</tr>
+	{#druzyny}
+		<tr>
+			<td>{nazwa}</td>
+			<td>{kraj_pochodzenia}</td>
+			<td>{liga}</td>
+		</tr>
+	{/druzyny}
+	</table>
+{/body}
